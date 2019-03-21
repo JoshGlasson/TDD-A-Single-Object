@@ -17,6 +17,10 @@ ONE_DICE = 1
     return rolls
   end
 
-end
+  def score
+    sum = 0
+    rolls.each { |a| sum+=a }
+    return "#{rolls.join(", ")} - Total Score: #{sum}"
+  end
 
-p Dice.new(2).roll.count
+end
