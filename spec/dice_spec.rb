@@ -45,6 +45,4 @@ describe Dice do
     dice.roll
     expect(dice.rolls).to eq [1,1]
   end
-
-
 end
