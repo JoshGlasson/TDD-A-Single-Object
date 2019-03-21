@@ -7,9 +7,8 @@ describe Dice do
   end
 
   it 'rolls dice and returns random number' do
-    dice1 = Dice.new(1, 100)
-    dice2 = Dice.new(1, 100)
-    expect(dice1.roll_dice).not_to eq dice2.roll_dice
+    allow(subject).to receive(:rand).and_return(1)
+    expect(subject.roll_dice).to eq [1]
   end
 
   it 'rolls multiple dice' do
