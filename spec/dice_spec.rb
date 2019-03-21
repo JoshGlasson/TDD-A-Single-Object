@@ -18,7 +18,7 @@ describe Dice do
 
   it 'defaults to one dice if no number entered' do
     subject.roll
-    expect(subject.rolls.count).to eq 1
+    expect(subject.rolls.count).to eq Dice::ONE_DICE
   end
 
   it 'shows result of each dice roll' do
@@ -27,6 +27,17 @@ describe Dice do
     sum_of_rolls = 0
     dice.rolls.each { |dice| sum_of_rolls += dice }
     expect(dice.score).to eq "#{dice.rolls.join(", ")} - Total Score: #{sum_of_rolls}"
+  end
+
+  it 'can roll different sized dice' do
+    dice = Dice.new(Dice::ONE_DICE, 1)
+    dice.roll
+    expect(dice.rolls).to eq [1]
+  end
+
+  it 'defaults to 6 sided die if left blank' do
+    dice = Dice.new
+    expect(dice.dice_faces).to eq 6
   end
 
 end
