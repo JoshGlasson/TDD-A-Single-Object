@@ -6,8 +6,10 @@ describe Dice do
     expect(subject).to respond_to :roll_dice
   end
 
-  it 'rolls dice and returns number' do
-    expect(subject.roll_dice).to eq subject.dice_rolls
+  it 'rolls dice and returns random number' do
+    dice1 = Dice.new(1, 100)
+    dice2 = Dice.new(1, 100)
+    expect(dice1.roll_dice).not_to eq dice2.roll_dice
   end
 
   it 'rolls multiple dice' do
@@ -28,12 +30,12 @@ describe Dice do
   end
 
   it 'can roll different sized dice' do
-    dice = Dice.new(Dice::ONE_DICE, 1)
+    dice = Dice.new(1, 1)
     dice.roll_dice
     expect(dice.dice_rolls).to eq [1]
   end
 
-  it 'defaults to 6 sided die if left blank' do
+  it 'defaults to one 6 sided die if left blank' do
     dice = Dice.new
     expect(dice.dice_faces).to eq 6
   end
