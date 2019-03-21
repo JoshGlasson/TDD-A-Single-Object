@@ -26,7 +26,7 @@ I want to get the result of each dice roll
 
 Your focus here should be on adopting a rigorous TDD process - Red, Green, Refactor.
 
-## Evidence Plan ##
+### Evidence Plan ###
 
 You will feel more comfortable in your ability to explain all stages of the TDD process. (emotional evidence)
 
