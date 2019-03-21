@@ -1,6 +1,6 @@
-# TDD A Single Object
+# TDD A Single Object
 
-## Action Plan
+## Action Plan 
 
 Apply what you have learned about TDD to building a single Dice object based on the following user stories.
 
