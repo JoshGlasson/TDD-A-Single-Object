@@ -18,9 +18,9 @@ ONE_DICE = 1
   end
 
   def score
-    sum = 0
-    rolls.each { |a| sum+=a }
-    return "#{rolls.join(", ")} - Total Score: #{sum}"
+    sum_of_rolls = 0
+    rolls.each { |dice| sum_of_rolls += dice }
+    return "#{rolls.join(", ")} - Total Score: #{sum_of_rolls}"
   end
 
 end

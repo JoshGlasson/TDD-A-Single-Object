@@ -1,6 +1,11 @@
 require 'dice'
 
 describe Dice do
+
+  it 'rolls a dice' do
+    expect(subject).to respond_to :roll
+  end
+
   it 'rolls dice and returns number' do
     expect(subject.roll).to eq subject.rolls
   end
@@ -19,9 +24,9 @@ describe Dice do
   it 'shows result of each dice roll' do
     dice = Dice.new(2)
     dice.roll
-    sum = 0
-    dice.rolls.each { |a| sum+=a }
-    expect(dice.score).to eq "#{dice.rolls.join(", ")} - Total Score: #{sum}"
+    sum_of_rolls = 0
+    dice.rolls.each { |dice| sum_of_rolls += dice }
+    expect(dice.score).to eq "#{dice.rolls.join(", ")} - Total Score: #{sum_of_rolls}"
   end
 
 end
