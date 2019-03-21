@@ -40,4 +40,11 @@ describe Dice do
     expect(dice.dice_faces).to eq 6
   end
 
+  it 'can roll different sized dice multiple times' do
+    dice = Dice.new(2, 1)
+    dice.roll
+    expect(dice.rolls).to eq [1,1]
+  end
+
+
 end
